@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include lease_accounting *.css
+recursive-include lease_accounting *.csv
+recursive-include lease_accounting *.html
+recursive-include lease_accounting *.ico
+recursive-include lease_accounting *.js
+recursive-include lease_accounting *.json
+recursive-include lease_accounting *.md
+recursive-include lease_accounting *.png
+recursive-include lease_accounting *.py
+recursive-include lease_accounting *.svg
+recursive-include lease_accounting *.txt
+recursive-exclude lease_accounting *.pyc
