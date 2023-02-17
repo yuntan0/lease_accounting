@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:LS{abbr}-{YY}{MM}{######}",
+ "creation": "2023-02-15 09:07:59.913130",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "abbr",
+  "currency",
+  "interest_rate",
+  "monthly_interest_rate",
+  "cost_center",
+  "column_break_rxcfk",
+  "npv",
+  "total",
+  "bank_account",
+  "lease_asset",
+  "lease_liability",
+  "column_break_zbo0o",
+  "interest_expense",
+  "no_of_months",
+  "start_date",
+  "get_monthly_dates",
+  "get_monthly_pv",
+  "get_monthly_interest",
+  "schedule_section",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "no_of_months",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of Months",
+   "reqd": 1
+  },
+  {
+   "fieldname": "interest_rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Annual Interest Rate",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "company.default_currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "npv",
+   "fieldtype": "Currency",
+   "label": "NPV"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "reqd": 1
+  },
+  {
+   "fieldname": "monthly_interest_rate",
+   "fieldtype": "Float",
+   "label": "Monthly Interest Rate"
+  },
+  {
+   "fetch_from": "company.abbr",
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Abbr"
+  },
+  {
+   "fieldname": "column_break_rxcfk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "schedule_section",
+   "fieldtype": "Section Break",
+   "label": "Schedule"
+  },
+  {
+   "fieldname": "column_break_zbo0o",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "get_monthly_dates",
+   "fieldtype": "Button",
+   "label": "Add Schedule",
+   "options": "get_monthly_dates"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Lease Register Item"
+  },
+  {
+   "fieldname": "get_monthly_pv",
+   "fieldtype": "Button",
+   "label": "Calculate PV",
+   "options": "get_monthly_pv"
+  },
+  {
+   "fieldname": "get_monthly_interest",
+   "fieldtype": "Button",
+   "label": "Calculate Interest",
+   "options": "get_monthly_interest"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "lease_asset",
+   "fieldtype": "Link",
+   "label": "Lease Asset",
+   "options": "Account"
+  },
+  {
+   "fieldname": "lease_liability",
+   "fieldtype": "Link",
+   "label": "Lease Liability",
+   "options": "Account"
+  },
+  {
+   "fieldname": "interest_expense",
+   "fieldtype": "Link",
+   "label": "Interest Expense",
+   "options": "Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-17 13:38:56.636876",
+ "modified_by": "Administrator",
+ "module": "Lease Accounting",
+ "name": "Lease Register",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
