@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-02-15 09:12:23.354361",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "lease_payment",
+  "pv",
+  "accural",
+  "column_break_6b8zd",
+  "interest_expense",
+  "principal",
+  "ending_liability_value",
+  "ending_asset_value",
+  "column_break_923mv",
+  "depreciation",
+  "amortization",
+  "journal_entry",
+  "create_journal",
+  "booked_lease_journal"
+ ],
+ "fields": [
+  {
+   "fieldname": "lease_payment",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Lease Payment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pv",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "PV"
+  },
+  {
+   "fieldname": "interest_expense",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Interest Expense"
+  },
+  {
+   "fieldname": "principal",
+   "fieldtype": "Currency",
+   "label": "Principal"
+  },
+  {
+   "fieldname": "ending_liability_value",
+   "fieldtype": "Currency",
+   "label": "Ending Liability Value"
+  },
+  {
+   "fieldname": "ending_asset_value",
+   "fieldtype": "Currency",
+   "label": "Ending Asset Value"
+  },
+  {
+   "fieldname": "depreciation",
+   "fieldtype": "Currency",
+   "label": "Depreciation"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accural",
+   "fieldtype": "Currency",
+   "label": "Accural"
+  },
+  {
+   "fieldname": "amortization",
+   "fieldtype": "Currency",
+   "label": "Amortization"
+  },
+  {
+   "fieldname": "create_journal",
+   "fieldtype": "Button",
+   "label": "Create Journal",
+   "options": "create_journal"
+  },
+  {
+   "fieldname": "column_break_6b8zd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_923mv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Journal Entry",
+   "options": "Journal Entry"
+  },
+  {
+   "default": "0",
+   "fieldname": "booked_lease_journal",
+   "fieldtype": "Check",
+   "label": "Booked Lease Journal"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-17 10:00:52.965963",
+ "modified_by": "Administrator",
+ "module": "Lease Accounting",
+ "name": "Lease Register Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
