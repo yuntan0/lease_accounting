@@ -52,6 +52,7 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Annual Interest Rate",
+   "precision": "6",
    "reqd": 1
   },
   {
@@ -77,7 +78,8 @@
   {
    "fieldname": "monthly_interest_rate",
    "fieldtype": "Float",
-   "label": "Monthly Interest Rate"
+   "label": "Monthly Interest Rate",
+   "precision": "6"
   },
   {
    "fetch_from": "company.abbr",
@@ -166,7 +168,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-17 13:38:56.636876",
+ "modified": "2023-02-27 15:15:32.694275",
  "modified_by": "Administrator",
  "module": "Lease Accounting",
  "name": "Lease Register",
