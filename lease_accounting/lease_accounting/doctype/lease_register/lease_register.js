@@ -58,7 +58,7 @@ frappe.ui.form.on('Lease Register', {
 		// frm.doc.monthly_interest_rate = frm.doc.interest_rate/12;
 		cur_frm.set_value('monthly_interest_rate',frm.doc.interest_rate/12);
 	},
-	item:function(frm){
-		frm.doc.item.length()
-	}
+	// item:function(frm){
+	// 	frm.doc.item.length()
+	// }
 });
