@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{abbr}-{category_name}",
+ "creation": "2023-03-13 16:40:50.686520",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "category_name",
+  "column_break_kemnt",
+  "company",
+  "abbr",
+  "section_break_dng0u",
+  "interest_expense",
+  "expense_account",
+  "lease_asset",
+  "column_break_lgzus",
+  "lease_liability",
+  "bank_account",
+  "is_advance",
+  "advance_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "category_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Category Name",
+   "search_index": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "search_index": 1
+  },
+  {
+   "fetch_from": "company.abbr",
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Abbr"
+  },
+  {
+   "fieldname": "section_break_dng0u",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "interest_expense",
+   "fieldtype": "Link",
+   "label": "Interest Expense",
+   "options": "Account"
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "lease_asset",
+   "fieldtype": "Link",
+   "label": "Lease Asset",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_lgzus",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lease_liability",
+   "fieldtype": "Link",
+   "label": "Lease Liability",
+   "options": "Account"
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Account"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_advance",
+   "fieldtype": "Check",
+   "label": "Is Advance"
+  },
+  {
+   "fieldname": "column_break_kemnt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.is_advance",
+   "fieldname": "advance_account",
+   "fieldtype": "Link",
+   "label": "Advance Account",
+   "options": "Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-13 16:58:33.786571",
+ "modified_by": "Administrator",
+ "module": "Lease Accounting",
+ "name": "Lease Category",
+ "name_case": "UPPER CASE",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
