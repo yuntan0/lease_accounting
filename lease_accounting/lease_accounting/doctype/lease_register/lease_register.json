@@ -10,25 +10,30 @@
  "field_order": [
   "company",
   "abbr",
-  "currency",
+  "lease_category",
   "interest_rate",
   "monthly_interest_rate",
   "cost_center",
-  "column_break_rxcfk",
-  "npv",
   "total",
+  "npv",
+  "column_break_rxcfk",
+  "currency",
   "bank_account",
   "lease_asset",
   "lease_liability",
-  "column_break_zbo0o",
   "interest_expense",
+  "expense_account",
+  "advance_account",
+  "column_break_zbo0o",
+  "is_advance",
   "no_of_months",
   "start_date",
   "get_monthly_dates",
   "get_monthly_pv",
   "get_monthly_interest",
   "schedule_section",
-  "items"
+  "items",
+  "amended_from"
  ],
  "fields": [
   {
@@ -142,33 +147,76 @@
    "reqd": 1
   },
   {
+   "fetch_from": "lease_category.bank_account",
    "fieldname": "bank_account",
    "fieldtype": "Link",
    "label": "Bank Account",
    "options": "Account"
   },
   {
+   "fetch_from": "lease_category.lease_asset",
    "fieldname": "lease_asset",
    "fieldtype": "Link",
    "label": "Lease Asset",
    "options": "Account"
   },
   {
+   "fetch_from": "lease_category.lease_liability",
    "fieldname": "lease_liability",
    "fieldtype": "Link",
    "label": "Lease Liability",
    "options": "Account"
   },
   {
+   "fetch_from": "lease_category.interest_expense",
    "fieldname": "interest_expense",
    "fieldtype": "Link",
    "label": "Interest Expense",
    "options": "Account"
+  },
+  {
+   "fieldname": "lease_category",
+   "fieldtype": "Link",
+   "label": "Lease Category",
+   "options": "Lease Category",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "lease_category.expense_account",
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Expense Account",
+   "options": "Account"
+  },
+  {
+   "depends_on": "eval:doc.is_advance",
+   "fetch_from": "lease_category.advance_account",
+   "fieldname": "advance_account",
+   "fieldtype": "Link",
+   "label": "Advance Account",
+   "options": "Account"
+  },
+  {
+   "default": "0",
+   "fetch_from": "lease_category.is_advance",
+   "fieldname": "is_advance",
+   "fieldtype": "Check",
+   "label": "Is Advance"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lease Register",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-02-27 15:15:32.694275",
+ "modified": "2023-03-13 17:08:52.965270",
  "modified_by": "Administrator",
  "module": "Lease Accounting",
  "name": "Lease Register",
@@ -190,5 +238,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

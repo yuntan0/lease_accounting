@@ -17,6 +17,7 @@ from frappe.utils import (
 	nowdate,
 	today,
 )
+from frappe.model.meta import get_field_precision
 from frappe.model.document import Document
 from erpnext.accounts.general_ledger import make_reverse_gl_entries
 
@@ -26,6 +27,10 @@ class LeaseRegister(Document):
 	@frappe.whitelist()
 	def get_monthly_dates(self):
 		# self.validate_values()
+		precision = get_field_precision(
+			frappe.get_meta("Lease Register Item").get_field("lease_payment"),
+			currency=frappe.get_cached_value("Company", self.company, "default_currency"),
+		)
 		date_list = self.get_monthly_date_list(self.start_date, self.no_of_months)
 		last_idx = max(
 			[cint(d.idx) for d in self.get("items")]
@@ -38,7 +43,7 @@ class LeaseRegister(Document):
 				ch = self.append("items", {})
 				ch.posting_date = d
 				ch.idx = last_idx + i + 1
-				ch.lease_payment = self.total/self.no_of_months
+				ch.lease_payment = flt(self.total/self.no_of_months, precision)
 
 		# for d in self.get("items"):
 		# 	if d.lease_payment:
